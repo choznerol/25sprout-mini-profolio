@@ -49,6 +49,7 @@
     "babel-preset-react": "^6.0.15",
     "babel-preset-stage-0": "^6.0.15",
     "css-loader": "^0.23.1",
+    "cross-env": "^3.0.0",
     "ejs-compiled-loader": "^2.1.1",
     "ejs-html-loader": "^2.0.2",
     "eslint": "^2.11.1",
@@ -79,6 +80,8 @@
     "stylelint": "^6.7.1",
     "stylelint-config-standard": "^9.0.0",
     "stylelint-webpack-plugin": "^0.2.0",
+    "vue-loader": "^11.1.4",
+    "vue-template-compiler": "^2.2.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.12.1",
     "yargs": "^4.7.1"
@@ -93,6 +96,7 @@
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "sanitize.css": "^4.0.0",
+    "vue": "^2.2.1",
     "whatwg-fetch": "^1.0.0"
   }
 }

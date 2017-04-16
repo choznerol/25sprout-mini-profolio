@@ -63,6 +63,9 @@ module.exports = {
 			test: /\.ejs$/,
 			loader: 'ejs-compiled',
 			include: path.join(__dirname, 'src/views')
+		}, {
+			test: /\.vue$/,
+			loader: 'vue-loader',
 		}, ]
 	},
 	postcss: function(webpack) {
