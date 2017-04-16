@@ -35,6 +35,11 @@ module.exports = {
 		}),
 	],
 	module: {
+		// Avoid module parsing error with `node_modules/airtable/lib/internal_config.json`
+		preLoaders: [{
+			test: /\.json$/,
+			loader:'json',
+		}],
 		loaders: [{
 			test: /\.js$/,
 			loaders: ['babel'],
