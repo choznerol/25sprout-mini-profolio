@@ -35,11 +35,45 @@
 </template>
 
 <script>
+var _ = require('lodash');
+var Airtable = require('airtable');
+var LawrenceChou = new Airtable({apiKey: 'keyC0ndMttA3rW78D'}).base('appHQdjnnImr4xteP');
+
 export default {
   data() {
     return {
       title: 'My Mini Profolio',
+      projects: [],
     }
+  },
+  created() {
+
+    // Save data from Airtable
+    this.syncAirtable()
+
+  },
+  methods: {
+
+    // Fetch data from Airtable
+    syncAirtable(){
+      let items = []
+      LawrenceChou('Projects').select({
+        maxRecords: 20,
+        view: "25sprout"
+      }).eachPage(function page(records, fetchNextPage) {
+
+        items = items.concat(_.map(records, (record) => _.set(record.fields, 'id', record.id)));
+
+        fetchNextPage();
+      }, (err) => {
+        if (err) { console.error(err); return; }
+        this.projects = items
+      });
+      console.log('Synced with Airtable')
+      console.log(this.projects);
+      return
+    },
+
   }
 }
 </script>
