@@ -3,6 +3,15 @@ import page from 'page';
 import { install } from 'offline-plugin/runtime';
 import 'sanitize.css/sanitize.css';
 import './style.global.css';
+import Vue from 'vue';
+import Profolio from './components/Profolio.vue';
+
+window.addEventListener('load', () => {
+	const app = new Vue({
+		el: '#profolio',
+		render: h => h(Profolio),
+	});
+});
 
 const routingCallback = (view, data = {}) => (ctx, next) => {
 	require.ensure([], require => {
