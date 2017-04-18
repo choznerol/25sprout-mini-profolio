@@ -1,7 +1,7 @@
 {
-  "name": "web-boilerplate",
-  "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "name": "mini-profolio",
+  "version": "0.1.0",
+  "description": "A simple project showcase app built on top of 25sprout's web-starter template.",
   "scripts": {
     "start": "node server.js",
     "clean": "rm -rf dist/*",

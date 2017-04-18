@@ -3,12 +3,14 @@
 
     <section v-for="i in Array(0,3,6)">
       <article v-for="P in Projects.slice(i,i+3)">
-        <span v-if="P.Image"><img :src="P.Image[0].thumbnails.large.url"></span>
-        <span v-else><img src="https://dl.airtable.com/ek4uBLKNSuiuddPdgtAJ_mark-github.png"></span>
+        <span v-if="P.Image">
+          <a :href="P.ImageLink" target="_blank"><img :src="P.Image[0].thumbnails.large.url"></a>
+        </span>
+        <span v-else><img src="https://dl.airtable.com/UBrngFwQ6e89Ah9cnucY_large_github_155.png"></span>
         <h1>{{ P.Title }}</h1>
         <h2 v-html="P.Positions"></h2>
         <div v-html="P.Story"></div>
-        <span class="skills" v-for="S in P.Skill"><code> {{ S }} </code></span>
+        <span class="skills" v-for="S in P.Skill"><code> {{ S }} </code></span>
       </article>
     </section>
 
@@ -67,6 +69,14 @@ section {
 
 article {
   margin-bottom: 5%;
+}
+
+h1 {
+  margin-bottom: 0px;
+}
+
+h2 {
+  padding-bottom: 15px;
 }
 
 img {
